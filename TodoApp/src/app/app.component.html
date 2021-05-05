@@ -1,0 +1,29 @@
+<header class="app">
+  <h1>Todo App</h1>
+</header>
+<main>
+  <div class="search">
+    <form action="">
+      <input type="text" placeholder="search todo" name="search" [(ngModel)]="searchTodo">
+      <input type="checkbox" (change)="onChecked()"><span>Show completed todos</span>
+    </form>
+  </div>
+  <div class="todo">
+    <ng-container *ngFor="let todo of todos| filter:searchTodo ; let index = index">
+      <div *ngIf="!isChecked || (isChecked && todo.complete)" class="todo__item">
+        <input type="checkbox" (change)="change(index)">
+        <div class="todo__item__info {{todo.complete? 'todo__item--complete':''}}">
+          <h4>{{todo.title}} </h4>
+          <p>{{todo.date}} </p>
+        </div>
+        <button (click)="deleteTodo(index)">Close</button>
+      </div>
+    </ng-container>
+  </div>
+  <div class="add">
+    <form (submit)="addTodo($event)" action="">
+      <input type="text" [(ngModel)]="title" placeholder="What do you need to do?" name="inputAdd">
+      <button (click)="addTodo($event)" >Add Todo</button>
+    </form>
+  </div>
+</main>

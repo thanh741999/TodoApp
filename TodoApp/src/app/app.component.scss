@@ -1,0 +1,75 @@
+.app {
+    text-align: center;
+}
+input[type=checkbox] {
+    margin-right: 10px;
+}
+input[type=text] {
+    width: 100%;
+    padding: 7px 12px;
+    margin-bottom: 20px;
+}
+.app {
+    margin-bottom: 20px;
+}
+.search {
+    padding: 15px;
+    background-color: #faf8fa;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.todo {
+    padding: 15px;
+    background-color: #faf8fa;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        position: relative;
+        &__info {
+            h4 {
+                margin-bottom: 10px;
+            }
+            p {
+                color: #d6d2d6;
+            }
+        }
+        button {
+            padding: 5px 8px;
+            background-color: #2d7eb0;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            outline: unset;
+            position: absolute;
+            right: 0;
+            color: #ffffff;
+        }
+        &--complete {
+            text-decoration: line-through;
+            h4 {
+                color: #d6d2d6;
+            }
+        }
+    }
+}
+.add {
+    padding: 10px 15px 15px;
+    border-radius: 5px;
+    background-color: #faf8fa;
+    border: 1px solid #e2e2e2;
+    button {
+        width: 100%;
+        display: block;
+        padding: 7px 12px;
+        background-color: #2d7eb0;
+        color: #ffffff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+}
